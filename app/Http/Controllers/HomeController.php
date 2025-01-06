@@ -22,6 +22,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $homeData = config('homedata');
+
+        return view('home', ['homeData' => $homeData]);
     }
 }

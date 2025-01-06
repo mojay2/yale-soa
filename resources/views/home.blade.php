@@ -34,19 +34,16 @@
                 <h1 class="pb-2 border-bottom display-4 fw-bold text-black">Upcoming Events</h1>
                 <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
 
-                    @for ($i = 0; $i < 3; $i++)
+                    @foreach ($homeData['events'] as $event)
                         <div class="col">
                             <div class="card card-cover h-100 overflow-hidden text-black bg-dark rounded-5 shadow-lg"
                                 style="background:{{ $backgroundImage3 ? "url('$backgroundImage3') no-repeat center center" : 'gray' }}">
                                 <div class="d-flex flex-column p-5 pb-3 text-white">
                                     <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                                        Closing date for submission of Fall 2025 application for admission</h2>
+                                        {{ $event['title'] }}</h2>
                                     <ul class="d-flex list-unstyled mt-auto">
                                         <li class="d-flex align-items-center me-3">
-                                            <svg class="bi me-2" width="1em" height="1em">
-                                                <use xlink:href="#geo-fill" />
-                                            </svg>
-                                            <small>JAN 20, 2025</small>
+                                            <small>{{ $event['date'] }}</small>
                                         </li>
                                         <li class="d-flex align-items-center">
                                             <svg class="bi me-2" width="1em" height="1em">
@@ -58,7 +55,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -73,22 +70,18 @@
             <div class="p-5 bg-dark bg-opacity-75 text-white">
                 <h1 class="pb-2 border-bottom fw-bold display-4">Community Bulletin Board</h1>
                 <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-                    @for ($i = 0; $i < 6; $i++)
+                    @foreach ($homeData['posts'] as $post)
                         <div class="col d-flex align-items-start">
                             <div>
-                                <h2>From our friends at the Yale Center for Environmental Justice
+                                <h2>{{ $post['title'] }}
                                 </h2>
-                                <p class>Paragraph of text beneath the heading to explain the heading. We'll add onto it
-                                    with
-                                    another
-                                    sentence
-                                    and probably just keep going until we run out of words.</p>
+                                <p class>{{ $post['body'] }}</p>
                                 <a href="#" class="btn btn-primary">
-                                    Primary button
+                                    View More Info
                                 </a>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </div>
