@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class AboutController extends Controller
+class ApplyController extends Controller
 {
     /**
      * Show the page index.
@@ -11,8 +11,6 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $aboutData = config('aboutdata');
-
-        return view('about', ['aboutData' => $aboutData]);
+        return view('apply');
     }
 }

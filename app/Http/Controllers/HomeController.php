@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// Dashboard contoller for logged in user
 class HomeController extends Controller
 {
     /**

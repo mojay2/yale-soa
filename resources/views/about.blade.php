@@ -168,7 +168,7 @@
                             style="width: 100%; height: 300px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title display-6 fw-bold">{{ $facility['name'] }}</h5>
-                            <p class="card-text">A vast collection of books, journals, and digital resources.</p>
+                            {{-- <p class="card-text">A vast collection of books, journals, and digital resources.</p> --}}
                             <div class="d-flex justify-content-end">
                                 <button class="btn btn-primary view-info-btn" data-bs-toggle="modal"
                                     data-bs-target="#facilityModal" data-name="{{ $facility['name'] }}"

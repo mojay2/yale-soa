@@ -38,7 +38,7 @@ return [
             "position" => "Dean of Arts",
             "link" => "loremipsum",
         ],
-         [
+        [
             "id" => 1,
             "name" => "Dr. John Doe",
             "position" => "Dean of Arts",

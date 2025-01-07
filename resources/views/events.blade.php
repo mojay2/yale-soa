@@ -5,7 +5,7 @@
 @endphp
 
 @section('content')
-    {{-- Mission Statement --}}
+    {{-- Events Intro --}}
     <section class="py-5 text-left container-fluid"
         style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: tile;">
         <div class="row py-lg-5">

@@ -71,11 +71,11 @@
                 <h1 class="pb-2 border-bottom fw-bold display-4">Community Bulletin Board</h1>
                 <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
                     @foreach ($homeData['posts'] as $post)
-                        <div class="col d-flex align-items-start">
+                        <div class="col d-flex align-items-start rounded-5 shadow-lg p-4 bulletin-card">
                             <div>
                                 <h2>{{ $post['title'] }}
                                 </h2>
-                                <p class>{{ $post['body'] }}</p>
+                                <p class="post-body">{{ $post['body'] }}</p>
                                 <a href="#" class="btn btn-primary">
                                     View More Info
                                 </a>

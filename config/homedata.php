@@ -63,7 +63,7 @@ return [
         [
             'id' => 6,
             'title' => 'Sustainable Agriculture Practices',
-            'body' => 'Paragraph of text beneath the heading to explain the heading. We\'ll add onto it with another sentence and probably just keep going until we run out of words.',
+            'body' => 'Paragraph of text beneath the heading  Paragraph of text beneath the headingParagraph of text beneath the headingParagraph of text beneath the headingParagraph of text beneath the headingParagraph of text beneath the headingParagraph of text beneath the headingto explain the heading. We\'ll add onto it with another sentence and probably just keep going until we run out of words.',
             'date' => 'MAR 5, 2025',
             'image' => 'images/post3.jpg',
         ],

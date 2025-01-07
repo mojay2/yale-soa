@@ -14,8 +14,15 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
@@ -51,7 +58,7 @@
                         Yale School of Art
                     </a>
 
-                    <ul class="navbar-nav col-lg-6 mx-auto justify-content-center">
+                    <ul class="navbar-nav col-lg-6 mx-auto align-items-center justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
                         </li>
@@ -59,14 +66,17 @@
                             <a class="nav-link" aria-current="page" href="{{ route('about') }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Apply</a>
+                            <a class="nav-link" href="{{ route('apply') }}">Apply</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('events') }}">Events</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+                        </li>
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Dashboard</a>
+                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
                         @endauth
                     </ul>
