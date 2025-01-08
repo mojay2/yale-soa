@@ -25,13 +25,13 @@ Before getting started, ensure that you have the following installed:
 First, clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/mojay2/yale-soa.git
 ```
 
 Navigate into the project directory:
 
 ```bash
-cd your-repository-name
+cd yale-soa
 ```
 
 ## Setting Up the Development Environment
