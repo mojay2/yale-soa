@@ -5,7 +5,7 @@
 .bulletin-card:hover {
     background-color: #343a40; /* Dark solid background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
-    outline: 3px solid #00356b; /* Outline color on hover (optional, change to your preference) */
+    outline: 2px solid #00356b; /* Outline color on hover (optional, change to your preference) */
 }
 
 .bulletin-card .post-body {
@@ -15,5 +15,14 @@
     text-overflow: ellipsis; /* Add ellipsis for overflow */
     display: -webkit-box;
     -webkit-line-clamp: 4; /* Limit body text to 4 lines */
+    -webkit-box-orient: vertical;
+}
+
+.bulletin-card .post-title {
+    font-weight: bold;
+    overflow: hidden; /* Hide text exceeding the container */
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit title text to 2 lines */
     -webkit-box-orient: vertical;
 }

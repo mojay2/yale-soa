@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Dashboard - Yale School of Art')
 @php
     $backgroundImage = file_exists(public_path('images/yale-bg-1.jpg')) ? asset('images/yale-bg-1.jpg') : null;
 @endphp
@@ -82,6 +82,126 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Posts --}}
+    <div class="container pt-5">
+        <div class="row justify-content-center">
+            @auth
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header fs-3 fw-bold">{{ __('Posts') }}</div>
+
+                        <div class="card-body">
+                            <table id="posts-table" class="py-4 table table-bordered table-striped w-100">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Title</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($posts as $post)
+                                        <tr>
+                                            <td>{{ $post->id }}</td>
+                                            <td>{{ $post->first_name }}</td>
+                                            <td>{{ $post->last_name }}</td>
+                                            <td>{{ $post->title }}</td>
+                                            <td>{{ $post->status }}</td>
+                                            <td>
+                                                <button class="btn btn-primary btn-sm view-post" data-id="{{ $post->id }}"
+                                                    data-bs-toggle="modal" data-bs-target="#viewPostModal">
+                                                    View
+                                                </button>
+                                                <button class="btn btn-warning btn-sm change-status"
+                                                    data-id="{{ $post->id }}" data-bs-toggle="modal"
+                                                    data-bs-target="#statusModal">
+                                                    Status
+                                                </button>
+                                                <button class="btn btn-danger btn-sm archive-post"
+                                                    data-id="{{ $post->id }}" data-bs-toggle="modal"
+                                                    data-bs-target="#archiveModal">
+                                                    Archive
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            @endauth
+        </div>
+    </div>
+
+    <!-- View Post Modal -->
+    <div class="modal" id="viewPostModal" tabindex="-1" aria-labelledby="viewPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewPostModalLabel">Post Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>First Name:</strong> <span id="modalFirstNamePosts"></span></p>
+                    <p><strong>Last Name:</strong> <span id="modalLastNamePosts"></span></p>
+                    <p><strong>Title:</strong> <span id="modalTitle"></span></p>
+                    <p><strong>Body:</strong> <span id="modalBody"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Modal -->
+    <!-- Status Modal -->
+    <div class="modal" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+        @csrf
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="statusModalLabel">Change Post Status</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="statusDropdown">Select Status:</label>
+                    <select id="statusDropdown" class="form-select" name="status">
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="saveStatus">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Archive Modal -->
+    <div class="modal" id="archiveModal" tabindex="-1" aria-labelledby="archiveModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="archiveModalLabel">Confirm Archive</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to archive this post?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="archiveConfirm">Archive</button>
                 </div>
             </div>
         </div>

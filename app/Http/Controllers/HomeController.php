@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\PostController;
+
 class HomeController extends Controller
 {
     /**
@@ -22,7 +24,9 @@ class HomeController extends Controller
     public function index()
     {
         $homeData = config('homedata');
+        $postController = new PostController();
+        $posts = $postController->fetchApprovedPosts();
 
-        return view('home', ['homeData' => $homeData]);
+        return view('home', ['homeData' => $homeData, 'posts' => $posts]);
     }
 }

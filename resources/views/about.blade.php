@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'About - Yale School of Art')
 @php
     $backgroundImage = file_exists(public_path('images/yale-bg-1.jpg')) ? asset('images/yale-bg-1.jpg') : null;
     $backgroundImage2 = file_exists(public_path('images/yale-bg-2.jpg')) ? asset('images/yale-bg-2.jpg') : null;
@@ -134,6 +134,7 @@
         </div>
     </section>
 
+
     {{-- History Section --}}
     <section class="container px-4 py-5 border-bottom">
         <div class="row g-5 align-items-center">
@@ -220,7 +221,13 @@
         </div>
     </section>
 
+    {{-- Scroll to Top Button --}}
+    <button id="scroll-to-top-btn" class="btn btn-primary btn-lg rounded-circle">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     {{-- Modals --}}
+    <x-summer-modal />
     <x-people-modal :data="$aboutData" />
     <x-history-modal />
     <x-facilities-modal />

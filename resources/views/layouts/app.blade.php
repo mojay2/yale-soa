@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', config('app.name', 'Yale School of Art'))</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -22,7 +22,6 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
-
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
@@ -48,10 +47,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Navbar Links (Centered on Large Screens) -->
-                <!-- Navbar Links (Centered on Large Screens) -->
                 <div class="navbar-collapse d-lg-flex collapse" id="navbarsExample11">
-                    <!-- Logo and Name for Large Screens -->
                     <a class="navbar-brand d-none d-lg-block mx-auto d-flex justify-content-center" href="#">
                         <img src="{{ asset('images/yale-logo.svg') }}" alt="Yale School of Art Logo" width="30"
                             height="30" class="d-inline-block align-text-top">
@@ -124,16 +120,51 @@
     </div>
 
     <!-- Footer -->
-    <footer class="my-1 bg-light mt-auto">
+    <footer class="my-1 pt-4 bg-light mt-auto">
         <div class="container">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted" aria-current="page" href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted" aria-current="page" href="{{ route('about') }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="{{ route('apply') }}">Apply</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="{{ route('events') }}">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-muted" href="{{ route('contact') }}">Contact Us</a>
+                </li>
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="{{ route('dashboard') }}">Dashboard</a>
+                    </li>
+                @endauth
             </ul>
-            <p class="text-center text-body-secondary">© 2025 Yale School of Art, Inc</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-3 my-4">
+                <p>© 2025 Yale School of Art. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="https://www.instagram.com/yaleschoolofart/">
+                            <i class="bi bi-instagram" style="font-size: 24px;"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="https://www.facebook.com/YaleSchoolofArt/">
+                            <i class="bi bi-facebook" style="font-size: 24px;"></i>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a class="link-body-emphasis" href="http://yaleart.org/youtube">
+                            <i class="bi bi-youtube" style="font-size: 24px;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </footer>
 </body>

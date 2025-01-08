@@ -18,3 +18,18 @@
     max-height: 400px;
     overflow-y: auto;
 }
+
+
+#scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 999;
+    cursor: pointer;
+    background-color: #00356b;
+}
+
+#scroll-to-top-btn i {
+    font-size: 1.5rem;
+}

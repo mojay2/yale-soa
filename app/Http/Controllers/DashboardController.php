@@ -24,8 +24,10 @@ class DashboardController extends Controller
     public function index()
     {
         $contactController = new ContactController();
+        $postController = new PostController();
         $contacts = $contactController->fetchContacts();
+        $posts = $postController->fetchPosts();
 
-        return view('dashboard', compact('contacts'));
+        return view('dashboard', ['contacts' => $contacts, 'posts' => $posts]);
     }
 }

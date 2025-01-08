@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Events - Yale School of Art')
 @php
     $backgroundImage = file_exists(public_path('images/yale-bg-1.jpg')) ? asset('images/yale-bg-1.jpg') : null;
 @endphp
