@@ -2,29 +2,40 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\ApplyController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\DashboardController;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->withoutMiddleware('auth');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
-Route::get('/about/graduate-study-areas', [App\Http\Controllers\AboutController::class, 'graduateStudyAreasIndex'])->name('about.study-areas');
-Route::get('/about/undergraduate', [App\Http\Controllers\AboutController::class, 'undergraduateIndex'])->name('about.undergraduate');
+// About routes
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/about/graduate-study-areas', [AboutController::class, 'graduateStudyAreasIndex'])->name('about.study-areas');
+Route::get('/about/undergraduate', [AboutController::class, 'undergraduateIndex'])->name('about.undergraduate');
 
-Route::get('/events', [App\Http\Controllers\EventsController::class, 'index'])->name('events');
+// Events route
+Route::get('/events', [EventsController::class, 'index'])->name('events');
 
-Route::get('/apply', [App\Http\Controllers\ApplyController::class, 'index'])->name('apply');
+// Apply route
+Route::get('/apply', [ApplyController::class, 'index'])->name('apply');
 
-Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
-Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'])->name('contact.submit');
-Route::get('/contacts/{id}', [App\Http\Controllers\ContactController::class, 'show'])->name('contacts.show');
+// Contact routes
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
 
-Route::post('/post', [App\Http\Controllers\PostController::class, 'store'])->name('post.submit');
-Route::get('/posts/{id}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
-Route::post('/posts/{id}/status', [App\Http\Controllers\PostController::class, 'updateStatus'])->name('post.status');
-Route::post('/posts/{id}/archive', [App\Http\Controllers\PostController::class, 'archive'])->name('post.archive');
+// Post routes
+Route::post('/post', [PostController::class, 'store'])->name('post.submit');
+Route::get('/posts/{id}', [PostController::class, 'show'])->name('post.show');
+Route::post('/posts/{id}/status', [PostController::class, 'updateStatus'])->name('post.status');
+Route::post('/posts/{id}/archive', [PostController::class, 'archive'])->name('post.archive');
 
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+// Dashboard route
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
