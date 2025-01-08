@@ -28,22 +28,24 @@
 
 <body class="d-flex flex-column min-vh-100">
     <div id="app">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
+        {{-- nav --}}
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand d-lg-none mx-auto d-flex justify-content-center" href="#">
+                <a class="navbar-brand d-lg-none mx-auto d-flex justify-content-center" href="{{ route('home') }}">
                     <img src="{{ asset('images/yale-logo.svg') }}" alt="Yale School of Art Logo" width="30"
                         height="30" class="d-inline-block align-text-top">
                     Yale School of Art
                 </a>
 
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false"
+                    data-bs-target="#navbar-yale" aria-controls="navbar-yale" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="navbar-collapse d-lg-flex collapse" id="navbarsExample11">
-                    <a class="navbar-brand d-none d-lg-block mx-auto d-flex justify-content-center" href="#">
+                <div class="navbar-collapse d-lg-flex collapse" id="navbar-yale">
+                    <a class="navbar-brand d-none d-lg-block mx-auto d-flex justify-content-center"
+                        href="{{ route('home') }}">
                         <img src="{{ asset('images/yale-logo.svg') }}" alt="Yale School of Art Logo" width="30"
                             height="30" class="d-inline-block align-text-top">
                         Yale School of Art
@@ -87,8 +89,7 @@
                         </li>
                     @endauth
                     </ul>
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
+                    <ul class="navbar-nav ms-auto mx-auto align-items-center justify-content-center">
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -126,20 +127,36 @@
             </div>
         </nav>
 
+
+        {{-- main content --}}
         <main class="flex-grow-1 py-1">
             @yield('content')
         </main>
     </div>
 
-    <!-- Footer -->
+    {{-- footer --}}
     <footer class="my-1 pt-4 bg-light mt-auto">
         <div class="container">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item">
                     <a class="nav-link text-muted" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-muted" aria-current="page" href="{{ route('about') }}">About</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-muted dropdown-toggle" href="#" id="footerNavbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="footerNavbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('about') }}">About Us</a></li>
+                        <li><a class="dropdown-item" href="{{ route('about.study-areas') }}">Graduate Study Areas</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{{ route('about.study-areas') }}">Undergraduate Study
+                                Areas</a></li>
+                        <li><a class="dropdown-item" href="{{ route('about') }}#people">People at SOA</a></li>
+                        <li><a class="dropdown-item" href="{{ route('about') }}#history">History</a></li>
+                        <li><a class="dropdown-item" href="{{ route('about') }}#facilities">Facilities</a></li>
+                        <li><a class="dropdown-item" href="{{ route('about') }}#resources">Resources</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-muted" href="{{ route('apply') }}">Apply</a>
@@ -176,7 +193,6 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </footer>
 </body>

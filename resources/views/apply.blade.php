@@ -12,7 +12,6 @@
         style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: cover;">
         <div class="row py-lg-5">
             <div class="col-lg-10 col-md-8 mx-auto">
-                <!-- Text Section with Solid Background -->
                 <div class="p-5 bg-dark bg-opacity-75 text-white">
                     <h1 class="fw-bold display-3">
                         Apply to the School
@@ -68,7 +67,6 @@
         <div class="container">
             <h2 class="fw-bold display-4 mb-4 text-left">Admission Guidelines</h2>
 
-            <!-- Section Description -->
             <div class="mb-4">
                 <p class="lead">
                     Admission to Yale’s MFA program is for the fall semester only, annually. Preliminary admission
@@ -92,9 +90,7 @@
 
             </div>
 
-            <!-- Guidelines Cards -->
             <div class="accordion shadow-lg" id="admissionGuidelines">
-                {{-- requirements --}}
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-requirements">
                         <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"

@@ -11,7 +11,6 @@
         style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: cover;">
         <div class="row py-lg-5">
             <div class="col-lg-10 col-md-8 mx-auto">
-                <!-- Text Section with Solid Background -->
                 <div class="p-5 bg-dark bg-opacity-75 text-white">
                     <h1 class="fw-bold display-3">Admin Dashboard</h1>
                 </div>
@@ -66,7 +65,6 @@
         </div>
     </div>
 
-    <!-- View Message Modal -->
     <div class="modal" id="viewMessageModal" tabindex="-1" aria-labelledby="viewMessageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -144,7 +142,7 @@
         </div>
     </div>
 
-    <!-- View Post Modal -->
+    {{-- view post modal --}}
     <div class="modal" id="viewPostModal" tabindex="-1" aria-labelledby="viewPostModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -165,8 +163,7 @@
         </div>
     </div>
 
-    <!-- Status Modal -->
-    <!-- Status Modal -->
+    {{-- Status Modal --}}
     <div class="modal" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
         @csrf
         <div class="modal-dialog modal-dialog-centered">
@@ -190,7 +187,7 @@
         </div>
     </div>
 
-    <!-- Archive Modal -->
+    {{-- archive modal --}}
     <div class="modal" id="archiveModal" tabindex="-1" aria-labelledby="archiveModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">

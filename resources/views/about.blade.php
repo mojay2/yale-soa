@@ -10,7 +10,6 @@
         style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: cover;">
         <div class="row py-lg-5">
             <div class="col-lg-10 col-md-8 mx-auto">
-                <!-- Text Section with Solid Background -->
                 <div class="p-5 bg-dark bg-opacity-75 text-white">
                     <h1 class="fw-bold display-3">Mission Statement</h1>
                     <p class="lead text-white">The mission of the Yale School of Art is to provide students with
@@ -29,8 +28,6 @@
 
     {{-- Study Areas --}}
     <div class="container px-4 py-5">
-        {{-- <h2 class="pb-2 fw-bold display-4 border-bottom">Study Areas</h2> --}}
-
         <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
             <div class="d-flex flex-column align-items-start gap-2">
                 <h3 class="fw-bold">The Yale School of Art is a graduate school that confers MFA degrees in Graphic
@@ -81,7 +78,7 @@
         </div>
     </div>
 
-    <!-- The People at SOA -->
+    {{-- People at SOA --}}
     <section class="container-fluid" id="people" style="background-color: #f7f7f7;">
         <div class="container px-4 py-5">
             <h1 class="pb-2 border-bottom fw-bold display-4">The People at SOA</h1>
@@ -177,7 +174,6 @@
                             style="width: 100%; height: 300px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title display-6 fw-bold">{{ $facility['name'] }}</h5>
-                            {{-- <p class="card-text">A vast collection of books, journals, and digital resources.</p> --}}
                             <div class="d-flex justify-content-end">
                                 <button class="btn btn-primary view-info-btn" data-bs-toggle="modal"
                                     data-bs-target="#facilityModal" data-name="{{ $facility['name'] }}"

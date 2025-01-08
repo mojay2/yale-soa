@@ -12,7 +12,6 @@
         style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: cover;">
         <div class="row py-lg-5">
             <div class="col-lg-10 col-md-8 mx-auto">
-                <!-- Text Section with Solid Background -->
                 <div class="p-5 bg-dark bg-opacity-75 text-white">
                     <h1 class="fw-bold display-3">Public Events</h1>
                     <p class="lead text-white"> Welcome to the School of Art’s public events calendar, initiated in the

@@ -11,7 +11,6 @@
         style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: cover;">
         <div class="row py-lg-5">
             <div class="col-lg-10 col-md-8 mx-auto">
-                <!-- Text Section with Solid Background -->
                 <div class="p-5 bg-dark bg-opacity-75 text-white">
                     <h1 class="fw-bold display-3">Undergraduate Studies in Art</h1>
                     <p class="lead text-white">The undergraduate art program offers a diverse and comprehensive education in
@@ -28,7 +27,6 @@
     {{-- Study Areas Section --}}
     <section class="container py-5 px-4">
         <div class="row">
-            <!-- Left Column: Navigator -->
             <div class="col-md-4 mb-4">
                 <div class="p-4 bg-light shadow rounded">
                     <h2 class="h5 fw-bold">On This Page</h2>
@@ -52,10 +50,8 @@
                 </div>
             </div>
 
-            <!-- Right Column: Study Areas Content -->
             <div class="col-md-8">
                 <div class="mb-5" id="study-area-about">
-                    <!-- Study Area Header -->
                     <h2 class="fw-bold display-5"> About The Yale College of Art Major
                     </h2>
                     <p class="lead">Yale College, the undergraduate division of Yale University, offers a Bachelor of Arts
@@ -81,9 +77,7 @@
                         (Art 111a or b) and Basic Drawing (Art 114a or b) are mandatory.
                     </p>
 
-                    <!-- Accordion for Credit Requirements and Plan of Study -->
                     <div class="accordion" id="accordion-about">
-                        <!-- Credit Requirements -->
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading-credit-about">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -125,7 +119,6 @@
                             </div>
                         </div>
 
-                        <!-- Plan of Study -->
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="heading-plan-about">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -203,7 +196,6 @@
 
                 {{-- Undergraduate Calendar --}}
                 <div class="mb-5" id="study-area-calendar">
-                    <!-- Study Area Header -->
                     <h2 class="fw-bold display-5"> Undergraduate Studies School Calendar</h2>
                     <p class="lead">Yale College, the undergraduate division of Yale University, offers a Bachelor of Arts
                         degree program with a major in art. Undergraduate applicants wishing to major in art at Yale must
@@ -220,9 +212,7 @@
                 </div>
 
 
-                <!-- Study Area Header -->
                 <div class="mb-5" id="study-area-prospect">
-                    <!-- Study Area Header -->
                     <h2 class="fw-bold display-5"> Prospective Students</h2>
                     <p class="lead">Yale College, the undergraduate division of Yale University, offers a Bachelor of Arts
                         degree program with a major in art. Undergraduate applicants wishing to major in art at Yale must
