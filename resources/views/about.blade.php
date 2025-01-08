@@ -1,15 +1,13 @@
 @extends('layouts.app')
 @section('title', 'About - Yale School of Art')
 @php
-    $backgroundImage = file_exists(public_path('images/yale-bg-1.jpg')) ? asset('images/yale-bg-1.jpg') : null;
-    $backgroundImage2 = file_exists(public_path('images/yale-bg-2.jpg')) ? asset('images/yale-bg-2.jpg') : null;
-    $backgroundImage3 = file_exists(public_path('images/yale-building.jpg')) ? asset('images/yale-building.jpg') : null;
+    $backgroundImage = file_exists(public_path('images/yale-about-bg.jpg')) ? asset('images/yale-about-bg.jpg') : null;
 @endphp
 
 @section('content')
     {{-- Mission Statement --}}
     <section class="py-5 text-left container-fluid"
-        style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: tile;">
+        style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: cover;">
         <div class="row py-lg-5">
             <div class="col-lg-10 col-md-8 mx-auto">
                 <!-- Text Section with Solid Background -->
@@ -51,23 +49,32 @@
                     <div class="card h-100 p-4 shadow-lg rounded-5">
                         <h4 class="fw-semibold mb-0">Graduate Study Areas</h4>
                         <p class="text-muted">Graphic Design, Painting and Printmaking, Photography, and Sculpture.</p>
-                        <a href="#" class="btn btn-primary">View info &raquo;</a>
+                        <a href="{{ route('about.study-areas') }}" class="btn btn-primary w-50 mx-auto">View info
+                            &raquo;</a>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="card h-100 p-4 shadow-lg rounded-5">
                         <h4 class="fw-semibold mb-0">Undergraduate Art Studies</h4>
-                        <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-                        <a href="#" class="btn btn-primary">View info &raquo;</a>
+                        <p class="text-muted">Explore diverse courses in art and design.</p>
+                        <a href="{{ route('about.undergraduate') }}" class="btn btn-primary w-50 mx-auto">View info
+                            &raquo;</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 p-4 shadow-lg rounded-5">
+                        <h4 class="fw-semibold mb-0">Summer Programs</h4>
+                        <p class="text-muted">Join our summer programs for hands-on learning experiences.</p>
+                        <a href="#" class="btn btn-primary w-50 mx-auto">View info &raquo;</a>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="card h-100 p-4 shadow-lg rounded-5">
-                        <h4 class="fw-semibold mb-0">Summer Programs</h4>
-                        <p class="text-muted">Paragraph of text beneath the heading to explain the heading.</p>
-                        <a href="#" class="btn btn-primary">View info &raquo;</a>
+                        <h4 class="fw-semibold mb-0">Apply Now!</h4>
+                        <p class="text-muted">Start your Master of Fine Arts journey by applying today.</p>
+                        <a href="{{ route('apply') }}" class="btn btn-primary w-50 mx-auto">Apply Now &raquo;</a>
                     </div>
                 </div>
             </div>
@@ -75,15 +82,15 @@
     </div>
 
     <!-- The People at SOA -->
-    <section class="container-fluid" id="people-at-soa" style="background-color: #f7f7f7;">
+    <section class="container-fluid" id="people" style="background-color: #f7f7f7;">
         <div class="container px-4 py-5">
             <h1 class="pb-2 border-bottom fw-bold display-4">The People at SOA</h1>
             <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                 <div class="col">
                     <div class="card h-100 p-4 shadow-lg rounded-5">
                         <div class="d-flex align-items-center">
-                            <img src="https://via.placeholder.com/100" alt="Faculty Image"
-                                class="img-fluid rounded-5 shadow-lg" style="width: 100; height: 100;">
+                            <img src="{{ asset('images/yale-about-professors.jpg') }}" alt="Faculty Image"
+                                class="img-fluid rounded-5 shadow-lg" style="width: 100px; height: 100px;">
                             <div class="flex-grow-1 ms-3">
                                 <h3 class="card-title">Faculty and Staff</h3>
                                 <p class="card-text">A dedicated team of professionals shaping the future of SOA.</p>
@@ -99,8 +106,8 @@
                 <div class="col">
                     <div class="card h-100 p-4 shadow-lg rounded-5">
                         <div class="d-flex align-items-center">
-                            <img src="https://via.placeholder.com/100" alt="Students Image"
-                                class="img-fluid rounded-5 shadow-lg" style="width: 100; height: 100;">
+                            <img src="{{ asset('images/yale-about-students.jpeg') }}" alt="Students Image"
+                                class="img-fluid rounded-5 shadow-lg" style="width: 100px; height: 100px;">
                             <div class="flex-grow-1 ms-3">
                                 <h3 class="card-title">Current Students</h3>
                                 <p class="card-text">Explore the creativity and work of our talented students.</p>
@@ -116,8 +123,8 @@
                 <div class="col">
                     <div class="card h-100 p-4 shadow-lg rounded-5">
                         <div class="d-flex align-items-center">
-                            <img src="https://via.placeholder.com/100" alt="Alumni Image"
-                                class="img-fluid rounded-5 shadow-lg" style="width: 100; height: 100;">
+                            <img src="{{ asset('images/yale-about-alumni.jpeg') }}" alt="Alumni Image"
+                                class="img-fluid rounded-5 shadow-lg" style="width: 100px; height: 100px;">
                             <div class="flex-grow-1 ms-3">
                                 <h3 class="card-title">Alumni</h3>
                                 <p class="card-text">Our graduates making an impact worldwide.</p>
@@ -136,7 +143,7 @@
 
 
     {{-- History Section --}}
-    <section class="container px-4 py-5 border-bottom">
+    <section class="container px-4 py-5 border-bottom" id="history">
         <div class="row g-5 align-items-center">
             <div class="col-md-6">
                 <h2 class="fw-bold display-4">Our History</h2>
@@ -152,20 +159,21 @@
                 </div>
             </div>
             <div class="col-md-6 text-center">
-                <img src="https://via.placeholder.com/500" alt="History Image" class="img-fluid rounded-5 shadow-lg"
-                    style="width: 500px; height: 500px;">
+                <img src="{{ asset('images/yale-about-history.jpg') }}" alt="History Image"
+                    class="img-fluid rounded-5 shadow-lg" style="width: 500px; height: 500px;">
             </div>
         </div>
     </section>
 
     {{-- Facilities --}}
-    <section class="container px-4 py-5">
+    <section class="container px-4 py-5" id="facilities">
         <h2 class="fw-bold display-4 text-center mb-5">Our Facilities</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            @foreach ($aboutData['facilities'] as $facility)
+            @foreach ($aboutData['facilities'] as $index => $facility)
                 <div class="col">
                     <div class="card shadow-lg rounded-5 overflow-hidden">
-                        <img src="{{ asset('images/yale-building.jpg') }}" alt="Facility Image" class="img-fluid shadow-lg"
+                        <img src="{{ asset('images/yale-about-facilities-' . (($index % 3) + 1) . '.jpg') }}"
+                            alt="Facility Image" class="img-fluid shadow-lg"
                             style="width: 100%; height: 300px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title display-6 fw-bold">{{ $facility['name'] }}</h5>
@@ -187,7 +195,7 @@
     </section>
 
     {{-- Student Resources --}}
-    <section class="container px-4 py-5">
+    <section class="container px-4 py-5" id="resources">
         <h2 class="fw-bold display-4 text-center mb-5">Student Resources</h2>
         <div class="row row-cols-1 row-cols-md-2 g-4">
             @foreach ($aboutData['resources'] as $index => $resource)

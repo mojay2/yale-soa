@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Home - Yale School of Art')
+
 @php
-    $backgroundImage = file_exists(public_path('images/yale-bg-1.jpg')) ? asset('images/yale-bg-1.jpg') : null;
+    $backgroundImage = file_exists(public_path('images/yale-home-bg.jpg')) ? asset('images/yale-home-bg.jpg') : null;
     $backgroundImage2 = file_exists(public_path('images/yale-bg-2.jpg')) ? asset('images/yale-bg-2.jpg') : null;
     $backgroundImage3 = file_exists(public_path('images/yale-building.jpg')) ? asset('images/yale-building.jpg') : null;
 @endphp
@@ -31,18 +32,13 @@
         <div class="container px-4 py-5">
             <h1 class="pb-2 border-bottom display-4 fw-bold text-black">Latest News at SOA</h1>
             <div class="row g-4 py-5">
-                @foreach ($homeData['news'] as $news)
+                @foreach ($homeData['news'] as $index => $news)
                     <div class="col-12">
                         <div class="card h-100 rounded-5 shadow-lg">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    @if (file_exists(public_path('images/' . $news['image'])))
-                                        <img src="{{ asset('images/' . $news['image']) }}" class="img-fluid rounded-start-5"
-                                            alt="{{ $news['headline'] }}">
-                                    @else
-                                        <img src="{{ asset('images/yale-building.jpg') }}" class="img-fluid rounded-start-5"
-                                            alt="Placeholder">
-                                    @endif
+                                    <img src="{{ asset('images/yale-about-facilities-' . (($index % 3) + 1) . '.jpg') }}"
+                                        class="img-fluid rounded-start-5" alt="Placeholder">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">

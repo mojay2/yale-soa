@@ -1,13 +1,15 @@
 @extends('layouts.app')
 @section('title', 'Apply - Yale School of Art')
 @php
-    $backgroundImage = file_exists(public_path('images/yale-bg-1.jpg')) ? asset('images/yale-bg-1.jpg') : null;
+    $backgroundImage = file_exists(public_path('images/yale-apply-bg.jpeg'))
+        ? asset('images/yale-apply-bg.jpeg')
+        : null;
 @endphp
 
 @section('content')
     {{-- Mission Statement --}}
     <section class="py-5 text-left container-fluid"
-        style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: tile;">
+        style="background: {{ $backgroundImage ? "url('$backgroundImage') no-repeat center center" : 'gray' }}; background-size: cover;">
         <div class="row py-lg-5">
             <div class="col-lg-10 col-md-8 mx-auto">
                 <!-- Text Section with Solid Background -->

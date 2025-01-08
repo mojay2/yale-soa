@@ -5,12 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', config('app.name', 'Yale School of Art'))</title>
 
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -18,7 +16,6 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
 
 
-    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
@@ -33,14 +30,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
             <div class="container-fluid">
-                <!-- Navbar Brand (Logo and Name) for Small Screens -->
                 <a class="navbar-brand d-lg-none mx-auto d-flex justify-content-center" href="#">
                     <img src="{{ asset('images/yale-logo.svg') }}" alt="Yale School of Art Logo" width="30"
                         height="30" class="d-inline-block align-text-top">
                     Yale School of Art
                 </a>
 
-                <!-- Navbar Toggler (Hamburger Menu) -->
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -58,23 +53,39 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('about') }}">About</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                About
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('about') }}">About Us</a></li>
+                                <li><a class="dropdown-item" href="{{ route('about.study-areas') }}">Graduate Study
+                                        Areas</a>
+                                <li><a class="dropdown-item" href="{{ route('about.study-areas') }}">Undergraduate Study
+                                        Areas</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('about') }}#people">People at SOA</a>
+                                <li><a class="dropdown-item" href="{{ route('about') }}#history">History</a></li>
+                                <li><a class="dropdown-item" href="{{ route('about') }}#facilities">Facilities</a></li>
+                                <li><a class="dropdown-item" href="{{ route('about') }}#resources">Resources</a></li>
                         </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('apply') }}">Apply</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('events') }}">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+                    </li>
+                    @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('apply') }}">Apply</a>
+                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('events') }}">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
-                        </li>
-                        @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-                            </li>
-                        @endauth
+                    @endauth
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -103,7 +114,8 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
                                         @csrf
                                     </form>
                                 </div>

@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Undergraduate Study Areas - Yale School of Art')
 @php
-    $backgroundImage = file_exists(public_path('images/yale-bg-1.jpg')) ? asset('images/yale-bg-1.jpg') : null;
-@endphp
+    $backgroundImage = file_exists(public_path('images/yale-about-facilities-1.jpg'))
+        ? asset('images/yale-about-facilities-1.jpg')
+    : null; @endphp
 
 @section('content')
     {{-- Study Areas Intro --}}

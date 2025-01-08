@@ -143,7 +143,7 @@ return [
         ],
         [
             "id" => 6,
-            "name" => "Production Studio",
+            "name" => "Production Studio G12",
             "description" => 'The Edgewood Production Studio is a production resource at the School of Art. Access to the space requires general facility and equipment orientation. The Edgewood Production Studio features DMX/MIDI Board, 8 truss mounted LED panel lights, 5 floor-standing LED panel lights, 3 floor-standing tungsten lights. A Panoramic 13’ Chromakey Green Screen, Stop Motion Stand, Fluid-Head Tripods, Dollies, Computer Cart with iMac and light stands. Supplemental video/sound production equipment may be borrowed from the Equipment Loan Office Room 215 in Green Hall.',
             "address" => "32 Edgewood Avenue, Room 17 (basement)",
             "links" => ["sarah.stevens-morling@yale.edu", "https://edpuzzle.com/join/kibinet", "https://docs.google.com/spreadsheets/d/1xCH99HbwjPk2Oj1hs_IDk7nImODNu-7ehaA5ckTCZL4/edit?usp=sharing"],

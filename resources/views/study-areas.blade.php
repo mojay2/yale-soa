@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Graduate Study Areas - Yale School of Art')
 @php
-    $backgroundImage = file_exists(public_path('images/yale-bg-1.jpg')) ? asset('images/yale-bg-1.jpg') : null;
-@endphp
+    $backgroundImage = file_exists(public_path('images/yale-about-facilities-2.jpg'))
+        ? asset('images/yale-about-facilities-2.jpg')
+    : null; @endphp
 
 @section('content')
     {{-- Study Areas Intro --}}
@@ -13,7 +14,10 @@
                 <!-- Text Section with Solid Background -->
                 <div class="p-5 bg-dark bg-opacity-75 text-white">
                     <h1 class="fw-bold display-3">Graduate Study Areas</h1>
-                    <p class="lead text-white">INSERT STUDY AREAS INTRO</p>
+                    <p class="lead text-white">Our graduate programs offer a diverse range of study areas, designed to
+                        provide advanced knowledge and specialized skills that empower students to excel in their chosen
+                        fields. Explore the academic disciplines that will shape your future and open doors to endless
+                        opportunities.</p>
                 </div>
             </div>
         </div>
